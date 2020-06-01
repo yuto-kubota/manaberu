@@ -1,6 +1,6 @@
 class ParentsController < ApplicationController
   def index
-    @parents = Parent.all
+    @parents = Parent.all.order(created_at: :desc)
   end
 
   def show
@@ -14,7 +14,8 @@ class ParentsController < ApplicationController
   def create
     @parent = Parent.new(parent_params)
     if @parent.save
-      redirect_to parents_path
+      flash[:notice] = "ユーザー登録完了"
+      redirect_to parent_path(@parent)
     else
       render 'new'
     end
@@ -28,7 +29,8 @@ class ParentsController < ApplicationController
     @parent = Parent.find(params[:id])
     @parent.update(parent_params)
     if @parent.save
-      redirect_to parents_path
+      flash[:notice] = "ユーザー編集完了"
+      redirect_to parent_path(@parent)
     else
       render 'edit'
     end
@@ -37,6 +39,7 @@ class ParentsController < ApplicationController
   def destroy
     @parent = Parent.find(params[:id])
     @parent.destroy
+    flash[:notice] = "ユーザー削除完了"
     redirect_to parents_path
   end
 
