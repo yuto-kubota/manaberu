@@ -18,3 +18,93 @@
 body{
   color: orange;
 }
+
+header{
+  width:100%;
+  height: 70px;
+  border-bottom: 1px solid;
+  border-color: orange;
+  z-index: 2;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+}
+
+header h1{
+  margin-left: 20px;
+  margin-bottom: 0;
+  padding-top: 5px;
+}
+
+.gnav{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  float: right;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+}
+
+.gnav li{
+  margin: 0 20px;
+  list-style: none;
+}
+
+.gnav li a {
+  display: block;
+  color: orange;
+  text-decoration: none;
+}
+
+.gnav li a:hover{
+  opacity: 0.5;
+}
+
+.gnav li:hover > ul > li {
+  height: 50px;
+  line-height: 50px;
+  overflow: visible;
+}
+
+.gnav ul{
+  padding: 0;
+}
+
+.gnav li a:link{
+  color: orange;
+}
+
+.gnav li li{
+  margin: 0;
+  height: 0;
+  overflow: hidden;
+  transition: .5s;
+}
+
+.gnav li li a{
+  border-bottom: 1px solid orange;
+}
+
+// 隙間-------------------------------------------------------
+.mar{
+  padding-top: 70px;
+}
+
+// link_to-color---------------------------------------------
+.link-orange{
+  color: orange;
+}
+
+.link-orange:hover{
+  color: orange;
+  opacity: 0.5;
+}
+// wrapper-----------------------------------------------------
+.wrapper{
+  margin: 0 30px;
+}
+
+.alert{
+  text-align: center;
+}
