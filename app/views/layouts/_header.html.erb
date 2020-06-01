@@ -1,0 +1,27 @@
+<header>
+  <h1>manaberu</h1>
+  <% if logged_in? %>
+  <ul class="gnav">
+    <li>
+      <a href="#" ontouchsrart=""><span>tap&slide</span></a>
+      <ul>
+        <li><%=link_to current_user.name, parent_path(current_user), class: "link-orange" %></li>
+        <li><%=link_to "ユーザー編集", edit_parent_path(current_user), class: "link-orange" %></li>
+        <li><%=link_to "ログアウト", logout_path, {method: :delete , class: "link-orange"} %></li>
+      </ul>
+    </li>
+  </ul>
+  <% else %>
+  <ul class="gnav">
+    <li>
+      <a href="#" ontouchsrart="">tap&slide</a>
+      <ul>
+        <li><%=link_to "ユーザー作成", new_parent_path, class: "link-orange" %></li>
+        <li><%=link_to "ログイン", login_path, class: "link-orange" %></li>
+      </ul>
+    </li>
+  </ul>
+  <% end %>
+</header>
+
+<div class="mar"></div>

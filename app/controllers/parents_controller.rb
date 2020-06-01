@@ -14,6 +14,7 @@ class ParentsController < ApplicationController
   def create
     @parent = Parent.new(parent_params)
     if @parent.save
+      login @parent
       flash[:notice] = "ユーザー登録完了"
       redirect_to parent_path(@parent)
     else
