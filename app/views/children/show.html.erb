@@ -1,2 +1,2 @@
-<h1>Children#show</h1>
-<p><%=@child.name%></p>
+<h1 class="headline"><%=image_tag @child.icon_avatar , {class: "rounded-circle mr-2"} if @child.avatar.attached? %><%=@child.name%></h1>
+<p><%=@child.parent.name%></p>

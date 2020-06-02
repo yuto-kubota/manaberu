@@ -13,16 +13,20 @@ class ChildrenController < ApplicationController
   def create
     @child = Child.new(child_params)
     parent = Parent.find_by(id: @child.parent_id)
-    if @child.parent_id == parent.id
-     if @child.save
-       child_login @child
-       flash[:notice] = "ユーザー登録完了"
-       redirect_to child_path(@child)
-     else
+    if @child.avatar.attach(params[:child][:avatar])
+      if @child.parent_id == parent.id
+       if @child.save
+         child_login @child
+         flash[:notice] = "ユーザー登録完了"
+         redirect_to child_path(@child)
+       else
+         render 'new'
+       end
+      else
        render 'new'
-     end
+      end
     else
-     render 'new'
+      render 'new'
     end
   end
 
@@ -50,6 +54,6 @@ class ChildrenController < ApplicationController
 
   private
    def child_params
-     params.require(:child).permit(:name, :password, :password_confirmation, :parent_id)
+     params.require(:child).permit(:name, :password, :password_confirmation, :parent_id, :avatar)
    end
 end

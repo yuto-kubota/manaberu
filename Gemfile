@@ -62,3 +62,5 @@ end
 
 #追加
 gem 'bootstrap'
+gem 'image_processing'
+gem 'mini_magick'

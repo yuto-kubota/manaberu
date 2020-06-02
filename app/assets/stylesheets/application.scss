@@ -98,11 +98,16 @@ header h1{
 
 .link-orange:hover{
   color: orange;
+  text-decoration: none;
   opacity: 0.5;
 }
 // wrapper-----------------------------------------------------
 .wrapper{
   margin: 0 30px;
+}
+
+.headline{
+  text-align: center;
 }
 
 .alert{

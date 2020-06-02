@@ -1,22 +1,22 @@
 <header>
-  <h1>manaberu</h1>
+  <h1><%=link_to "manaberu",homes_about_path, class:"link-orange" %></h1>
   <% if parent_logged_in? %>
   <ul class="gnav">
+    <li><%=link_to current_user_parent.name, parent_path(current_user_parent), class: "link-orange" %></li>
     <li>
       <a href="#" ontouchsrart=""><span>tap&slide</span></a>
       <ul>
-        <li><%=link_to current_user_parent.name, parent_path(current_user_parent), class: "link-orange" %></li>
         <li><%=link_to "parentユーザー編集", edit_parent_path(current_user_parent), class: "link-orange" %></li>
         <li><%=link_to "parentログアウト", logout_path, {method: :delete , class: "link-orange"} %></li>
       </ul>
     </li>
   </ul>
-  <% elsif child_logged_in? %>]
+  <% elsif child_logged_in? %>
   <ul class="gnav">
+    <li><%=link_to current_user_child.name, child_path(current_user_child), class: "link-orange" %></li>
     <li>
       <a href="#" ontouchsrart=""><span>tap&slide</span></a>
       <ul>
-        <li><%=link_to current_user_child.name, child_path(current_user_child), class: "link-orange" %></li>
         <li><%=link_to "childユーザー編集", edit_child_path(current_user_child), class: "link-orange" %></li>
         <li><%=link_to "childログアウト", child_logout_path, {method: :delete , class: "link-orange"} %></li>
       </ul>
