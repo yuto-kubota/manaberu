@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
+  get    '/child_login',   to: 'child_sessions#new'
+  post   '/child_login',   to: 'child_sessions#create'
+  delete '/child_logout',  to: 'child_sessions#destroy'
   resources :parents
   resources :children
 end

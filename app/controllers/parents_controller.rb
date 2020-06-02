@@ -39,8 +39,9 @@ class ParentsController < ApplicationController
   def destroy
     @parent = Parent.find(params[:id])
     @parent.destroy
+    parent_logout
     flash[:notice] = "ユーザー削除完了"
-    redirect_to parents_path
+    redirect_to root_path
   end
 
   private

@@ -15,6 +15,7 @@ class ChildrenController < ApplicationController
     parent = Parent.find_by(id: @child.parent_id)
     if @child.parent_id == parent.id
      if @child.save
+       login @child
        flash[:notice] = "ユーザー登録完了"
        redirect_to child_path(@child)
      else
@@ -42,6 +43,7 @@ class ChildrenController < ApplicationController
   def destroy
     @child = Child.find(params[:id])
     @child.destroy
+    child_logout
     flash[:notice] = "ユーザー削除完了"
     redirect_to root_path
   end
