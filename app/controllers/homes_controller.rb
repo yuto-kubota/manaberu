@@ -7,4 +7,10 @@ class HomesController < ApplicationController
 
   def demo
   end
+
+  def parent_top
+  end
+
+  def child_top
+  end
 end

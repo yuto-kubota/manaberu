@@ -28,8 +28,7 @@ class ParentsController < ApplicationController
 
   def update
     @parent = Parent.find(params[:id])
-    @parent.update(parent_params)
-    if @parent.save
+    if @parent.update(parent_params)
       flash[:notice] = "ユーザー編集完了"
       redirect_to parent_path(@parent)
     else

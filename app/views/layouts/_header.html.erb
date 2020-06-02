@@ -1,13 +1,13 @@
 <header>
   <h1>manaberu</h1>
-  <% if logged_in? %>
+  <% if parent_logged_in? %>
   <ul class="gnav">
     <li>
       <a href="#" ontouchsrart=""><span>tap&slide</span></a>
       <ul>
-        <li><%=link_to current_user.name, parent_path(current_user), class: "link-orange" %></li>
-        <li><%=link_to "ユーザー編集", edit_parent_path(current_user), class: "link-orange" %></li>
-        <li><%=link_to "ログアウト", logout_path, {method: :delete , class: "link-orange"} %></li>
+        <li><%=link_to current_user_parent.name, parent_path(current_user_parent), class: "link-orange" %></li>
+        <li><%=link_to "parentユーザー編集", edit_parent_path(current_user_parent), class: "link-orange" %></li>
+        <li><%=link_to "parentログアウト", logout_path, {method: :delete , class: "link-orange"} %></li>
       </ul>
     </li>
   </ul>
@@ -16,8 +16,7 @@
     <li>
       <a href="#" ontouchsrart="">tap&slide</a>
       <ul>
-        <li><%=link_to "ユーザー作成", new_parent_path, class: "link-orange" %></li>
-        <li><%=link_to "ログイン", login_path, class: "link-orange" %></li>
+        <li></li>
       </ul>
     </li>
   </ul>

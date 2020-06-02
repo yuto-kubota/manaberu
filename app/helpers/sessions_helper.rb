@@ -3,18 +3,20 @@ module SessionsHelper
     session[:user_id] = user.id
   end
 
-  def current_user
+  # parent-----------------------
+
+  def current_user_parent
     if session[:user_id]
-      @current_user ||= Parent.find_by(id: session[:user_id])
+      @current_user_parent ||= Parent.find_by(id: session[:user_id])
     end
   end
 
-  def logged_in?
-    !current_user.nil?
+  def parent_logged_in?
+    !current_user_parent.nil?
   end
 
-  def logout
+  def parent_logout
     session.delete(:user_id)
-    @current_user = nil
+    @current_user_parent = nil
   end
 end
