@@ -1,13 +1,12 @@
 module SessionsHelper
-  def login(user)
-    session[:user_id] = user.id
+    # parent-----------------------
+  def parent_login(parent)
+    session[:parent] = parent.id
   end
 
-  # parent-----------------------
-
   def current_user_parent
-    if session[:user_id]
-      @current_user_parent ||= Parent.find_by(id: session[:user_id])
+    if session[:parent]
+      @current_user_parent ||= Parent.find_by(id: session[:parent])
     end
   end
 
@@ -16,14 +15,18 @@ module SessionsHelper
   end
 
   def parent_logout
-    session.delete(:user_id)
+    session.delete(:parent)
     @current_user_parent = nil
   end
 
   # child------------------------
+  def child_login(child)
+    session[:child] = child.id
+  end
+
   def current_user_child
-    if session[:user_id]
-      @current_user_child ||= Child.find_by(id: session[:user_id])
+    if session[:child]
+      @current_user_child ||= Child.find_by(id: session[:child])
     end
   end
 
@@ -32,7 +35,7 @@ module SessionsHelper
   end
 
   def child_logout
-    session.delete(:user_id)
+    session.delete(:child)
     @current_user_child = nil
   end
 end

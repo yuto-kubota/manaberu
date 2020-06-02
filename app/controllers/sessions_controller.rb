@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
   def create
    user = Parent.find_by(email: params[:session][:email])
    if user && user.authenticate(params[:session][:password])
-     login user
+     parent_login user
      redirect_to user
    else
      render 'new'

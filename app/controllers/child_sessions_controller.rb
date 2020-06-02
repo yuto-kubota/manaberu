@@ -5,7 +5,7 @@ class ChildSessionsController < ApplicationController
   def create
     child = Child.find_by(name: params[:child_session][:name])
     if child && child.authenticate(params[:child_session][:password])
-      login child
+      child_login child
       redirect_to child
     else
       render 'new'

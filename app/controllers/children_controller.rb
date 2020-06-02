@@ -15,7 +15,7 @@ class ChildrenController < ApplicationController
     parent = Parent.find_by(id: @child.parent_id)
     if @child.parent_id == parent.id
      if @child.save
-       login @child
+       child_login @child
        flash[:notice] = "ユーザー登録完了"
        redirect_to child_path(@child)
      else
