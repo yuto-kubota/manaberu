@@ -13,7 +13,7 @@
   </ul>
   <% elsif child_logged_in? %>
   <ul class="gnav">
-    <li><%=link_to current_user_child.name, child_path(current_user_child), class: "link-orange" %></li>
+    <li><%=link_to current_user_child.nickname, child_path(current_user_child), class: "link-orange" %></li>
     <li>
       <a href="#" ontouchsrart=""><span>tap&slide</span></a>
       <ul>

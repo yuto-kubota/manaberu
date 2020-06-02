@@ -1,2 +1,3 @@
-<h1 class="headline"><%=image_tag @child.icon_avatar , {class: "rounded-circle mr-2"} if @child.avatar.attached? %><%=@child.name%></h1>
+<h1 class="headline"><%=image_tag @child.icon_avatar , {class: "rounded-circle mr-2"} if @child.avatar.attached? %><%=@child.nickname%></h1>
+<p><%=@child.age%></p>
 <p><%=@child.parent.name%></p>
