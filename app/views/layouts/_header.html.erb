@@ -22,11 +22,23 @@
       </ul>
     </li>
   </ul>
+  <% elsif giving_logged_in? %>
+  <ul class="gnav">
+    <li><%=link_to current_user_giving.name, giving_path(current_user_giving), class: "link-green" %></li>
+    <li>
+      <a href="#" ontouchsrart=""><span>tap&slide</span></a>
+      <ul>
+        <li><%=link_to "givingユーザー編集", edit_giving_path(current_user_giving), class: "link-green" %></li>
+        <li><%=link_to "givingログアウト", giving_logout_path, {method: :delete , class: "link-green"} %></li>
+      </ul>
+    </li>
+  </ul>
   <% else %>
   <ul class="gnav">
     <li>
       <a href="#" ontouchsrart="">tap&slide</a>
       <ul>
+        <li><%=link_to "givingはこちら", homes_giving_top_path %></li>
         <li><%=link_to "demo", homes_demo_path %></li>
       </ul>
     </li>
