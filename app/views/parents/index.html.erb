@@ -3,5 +3,5 @@
 <% @parents.each do |parent| %>
 <p><%=link_to parent.name, parent_path(parent)%></p>
 <p><%=link_to "編集", edit_parent_path(parent) %></p>
-<p><%=link_to "削除", parent_path(parent), method: :delete %></p>
+<p><%=link_to "削除", parent_path(parent), method: :delete, data:{confirm: '本当に削除しますか？'} %></p>
 <% end %>

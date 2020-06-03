@@ -1,6 +1,5 @@
 class ChildrenController < ApplicationController
   before_action :forbid_login_user, only:[:new, :create]
-  before_action :ensure_correct_user_child, except: [:new, :create]
   def index
   end
 

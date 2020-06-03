@@ -1,4 +1,12 @@
-<h1 class="headline">授業一覧</h1>
-<%@posts.each do |post| %>
-<div><%=link_to post.name, post_path(post)%></div>
-<% end %>
+<h1 class="headline pt-4">授業一覧</h1>
+<table class="table">
+  <tbody>
+    <%@posts.each do |post| %>
+    <tr>
+      <td>
+        <%=link_to post.name, post_path(post), class:"link-green"%>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

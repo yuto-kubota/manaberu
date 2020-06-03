@@ -1,6 +1,5 @@
 class GivingsController < ApplicationController
   before_action :forbid_login_user, only:[:new, :create]
-  before_action :ensure_correct_user_giving, except: [:new, :create]
   def new
     @giving = Giving.new
   end
@@ -9,6 +8,7 @@ class GivingsController < ApplicationController
     @giving = Giving.new(giving_params)
     if @giving.save
       giving_login @giving
+      flash[:notice] = "ユーザー登録完了"
       redirect_to giving_path(@giving)
     else
       render 'new'
@@ -31,6 +31,7 @@ class GivingsController < ApplicationController
   def update
     @giving = Giving.find(params[:id])
     if @giving.update(giving_params)
+      flash[:notice] = "ユーザー編集完了"
       redirect_to giving_path(@giving)
     else
       render 'edit'
@@ -41,6 +42,7 @@ class GivingsController < ApplicationController
     @giving = Giving.find(params[:id])
     giving_logout
     @giving.destroy
+    flash[:notice] = "ユーザー削除完了"
     redirect_to root_path
   end
 

@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  has_many :fins
+  has_many :fins, dependent: :destroy
   belongs_to :giving
 
   def finished?(child)

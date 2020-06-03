@@ -3,8 +3,8 @@ class Child < ApplicationRecord
   validates :parent_id, presence: true
   has_secure_password
   has_one_attached :avatar
-  has_many :fins
-  has_many :fin_posts, through: :fins, source: :post
+  has_many :fins, dependent: :destroy
+  has_many :fin_posts, through: :fins, source: :post, dependent: :destroy
   belongs_to :parent
 
   def icon_avatar

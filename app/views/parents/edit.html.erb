@@ -1,2 +1,3 @@
-<h1 class="top">編集画面</h1>
+<h1 class="top">ユーザー編集</h1>
 <%=render partial: 'parents/parent-form' %>
+<div class="des"><%=link_to "ユーザー削除", parent_path(@parent),{method: :delete, class:"link-red", data:{confirm: '本当に削除しますか？'}}%></div>
