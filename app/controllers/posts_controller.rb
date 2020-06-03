@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   def index
+    @posts = Post.all.order(created_at: :desc)
   end
 
   def new
@@ -47,6 +48,6 @@ class PostsController < ApplicationController
 
   private
    def post_params
-     params.require(:post).permit(:content, :youtube_url )
+     params.require(:post).permit(:content, :youtube_url, :name )
    end
 end

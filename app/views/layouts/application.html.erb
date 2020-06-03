@@ -12,13 +12,16 @@
   </head>
 
   <body>
-    <%=render 'layouts/header'%>
-    <%=render 'layouts/flash'%>
-    <%= yield %>
-    <!-- <footer>
+    <div class="b-body">
+      <%=render 'layouts/header'%>
+      <%=render 'layouts/flash'%>
+      <%= yield %>
+    </div>
+
+    <footer>
       <div class="footer-container">
         manaberu
       </div>
-    </footer> -->
+    </footer>
   </body>
 </html>

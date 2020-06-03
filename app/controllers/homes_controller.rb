@@ -6,9 +6,6 @@ class HomesController < ApplicationController
   def about
   end
 
-  def demo
-  end
-
   def parent_top
   end
 

@@ -19,7 +19,13 @@ body{
   color: #07b53b;
   background: #e6f2ef;
   font-family: 'HanziPen TC',sans-serif;
+  position: relative;
 }
+
+.b-body{
+  min-height: 93vh;
+}
+
 
 header{
   width:100%;
@@ -27,7 +33,7 @@ header{
   border-bottom: 1px solid;
   border-color: white;
   // z-index: 2;
-  position: fixed;
+  position: absolute;
   display: flex;
   justify-content: space-between;
   background: white;
@@ -235,7 +241,7 @@ footer{
   height: 50px;
   background-color: #353535;
   bottom: 0;
-  position: absolute;
+  position: relative;
 }
 
 .footer-container{
