@@ -38,4 +38,25 @@ module SessionsHelper
     session.delete(:child)
     @current_user_child = nil
   end
+
+  # giving-----------------------
+
+  def giving_login(giving)
+    session[:giving] = giving.id
+  end
+
+  def current_user_giving
+    if session[:giving]
+      @current_user_giving ||= Giving.find_by(id: session[:giving])
+    end
+  end
+
+  def giving_logged_in?
+    !current_user_giving.nil?
+  end
+
+  def giving_logout
+    session.delete(:giving)
+    @current_user_giving = nil
+  end
 end

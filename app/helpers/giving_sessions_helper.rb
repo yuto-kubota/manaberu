@@ -1,0 +1,2 @@
+module GivingSessionsHelper
+end

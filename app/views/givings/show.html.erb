@@ -1,0 +1,9 @@
+<h1 class="headline pt-4"><%=@giving.name%></h1>
+<div>
+  <%=@posts.each do |post| %>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <div>
+    <%=link_to post.content, post_path(post)%>
+  </div>
+  <% end %>
+</div>

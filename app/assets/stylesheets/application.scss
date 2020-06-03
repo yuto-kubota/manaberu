@@ -124,6 +124,16 @@ header h1{
   text-decoration: none;
   opacity: 0.5;
 }
+
+.link-red{
+  color: red;
+}
+
+.link-red:hover{
+  color: red;
+  text-decoration: none;
+  opacity: 0.5;
+}
 // wrapper-----------------------------------------------------
 .wrapper{
   margin: 0 30px;
@@ -232,6 +242,16 @@ footer{
   color: white;
   text-align: center;
   line-height: 50px;
+}
+
+// video-----------------------------------------
+.video{
+  text-align: center;
+  padding-top: 30px;
+}
+
+.post-content{
+  text-align: center;
 }
 
 

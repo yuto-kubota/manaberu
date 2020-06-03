@@ -1,0 +1,14 @@
+<h1 class="headline pt-4">投稿</h1>
+<div class="video">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="post-content">
+  説明
+  <div>
+    <%=@post.content%>
+  </div>
+</div>
+<div class="flex-container">
+  <div class="pr-3"><%=link_to "編集", edit_post_path(@post),class:"link-green"%></div>
+  <div class="pl-3"><%=link_to "削除", post_path(@post), {method: :delete, class:"link-red"} %></div>
+</div>
