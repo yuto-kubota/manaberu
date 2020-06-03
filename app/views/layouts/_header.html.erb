@@ -28,6 +28,7 @@
     <li>
       <a href="#" ontouchsrart=""><span>tap&slide</span></a>
       <ul>
+        <li><%=link_to "授業を投稿する", new_post_path, class: "link-green" %></li>
         <li><%=link_to "givingユーザー編集", edit_giving_path(current_user_giving), class: "link-green" %></li>
         <li><%=link_to "givingログアウト", giving_logout_path, {method: :delete , class: "link-green"} %></li>
       </ul>

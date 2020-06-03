@@ -19,6 +19,7 @@ class GivingsController < ApplicationController
 
   def show
     @giving = Giving.find(params[:id])
+    @posts = @giving.posts
   end
 
   def edit

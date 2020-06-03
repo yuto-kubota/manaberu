@@ -19,4 +19,5 @@ Rails.application.routes.draw do
   resources :parents
   resources :children
   resources :givings
+  resources :posts
 end

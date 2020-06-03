@@ -3,7 +3,7 @@ class GivingSessionsController < ApplicationController
   end
 
   def create
-    giving = Giving.find_by(name: params[:giving_session][:name])
+    giving = Giving.find_by(email: params[:giving_session][:email])
     if giving && giving.authenticate(params[:giving_session][:password])
       giving_login giving
       redirect_to giving
