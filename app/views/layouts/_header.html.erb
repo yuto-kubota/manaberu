@@ -17,6 +17,7 @@
     <li>
       <a href="#" ontouchsrart=""><span>tap&slide</span></a>
       <ul>
+        <li><%=link_to "授業一覧", posts_path %></li>
         <li><%=link_to "childユーザー編集", edit_child_path(current_user_child), class: "link-green" %></li>
         <li><%=link_to "childログアウト", child_logout_path, {method: :delete , class: "link-green"} %></li>
       </ul>
@@ -40,7 +41,6 @@
       <a href="#" ontouchsrart="">tap&slide</a>
       <ul>
         <li><%=link_to "givingはこちら", homes_giving_top_path %></li>
-        <li><%=link_to "demo", homes_demo_path %></li>
       </ul>
     </li>
   </ul>
