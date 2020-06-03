@@ -1,4 +1,6 @@
 class ParentsController < ApplicationController
+  before_action :forbid_login_user, only:[:new, :create]
+  before_action :ensure_correct_user_parent, except: [:new, :create]
   def index
     @parents = Parent.all.order(created_at: :desc)
   end

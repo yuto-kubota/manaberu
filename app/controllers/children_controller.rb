@@ -1,4 +1,6 @@
 class ChildrenController < ApplicationController
+  before_action :forbid_login_user, only:[:new, :create]
+  before_action :ensure_correct_user_child, except: [:new, :create]
   def index
   end
 
@@ -13,20 +15,16 @@ class ChildrenController < ApplicationController
   def create
     @child = Child.new(child_params)
     parent = Parent.find_by(id: @child.parent_id)
-    if @child.avatar.attach(params[:child][:avatar])
-      if @child.parent_id == parent.id
-       if @child.save
+    if parent == nil
+      render 'new'
+    else
+    if @child.avatar.attach(params[:child][:avatar]) && @child.parent_id == parent.id && @child.save
          child_login @child
          flash[:notice] = "ユーザー登録完了"
          redirect_to child_path(@child)
-       else
-         render 'new'
-       end
-      else
-       render 'new'
-      end
     else
       render 'new'
+    end
     end
   end
 

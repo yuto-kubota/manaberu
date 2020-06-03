@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  before_action :forbid_login_user, except:[:destroy]
   def new
   end
 

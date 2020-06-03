@@ -1,4 +1,6 @@
 class GivingsController < ApplicationController
+  before_action :forbid_login_user, only:[:new, :create]
+  before_action :ensure_correct_user_giving, except: [:new, :create]
   def new
     @giving = Giving.new
   end
