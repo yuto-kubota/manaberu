@@ -1,3 +1,8 @@
-<h1>Homes#top</h1>
-<p><%=link_to "parentはこちら", homes_parent_top_path %></p>
-<p><%=link_to "childはこちら", homes_child_top_path %></p>
+<div class="top-image">
+  <h1 class="home-top headline">manaberu</h1>
+  <p class="paragraph"><%=link_to "manaberuって何？", homes_about_path, class:"link-top" %></p>
+</div>
+<div class="flex-container">
+  <div class="flex-item"><%=link_to "教員はこちら", homes_parent_top_path, class:"btn-square link-white" %></div>
+  <div class="flex-item"><%=link_to "生徒はこちら", homes_child_top_path, class:"btn-square link-white" %></div>
+</div>

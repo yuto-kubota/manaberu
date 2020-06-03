@@ -16,18 +16,21 @@
 @import "bootstrap";
 
 body{
-  color: orange;
+  color: #07b53b;
+  background: #e6f2ef;
+  font-family: 'HanziPen TC',sans-serif;
 }
 
 header{
   width:100%;
   height: 70px;
   border-bottom: 1px solid;
-  border-color: orange;
-  z-index: 2;
+  border-color: white;
+  // z-index: 2;
   position: fixed;
   display: flex;
   justify-content: space-between;
+  background: white;
 }
 
 header h1{
@@ -53,7 +56,7 @@ header h1{
 
 .gnav li a {
   display: block;
-  color: orange;
+  color: #07b53b;
   text-decoration: none;
 }
 
@@ -72,7 +75,7 @@ header h1{
 }
 
 .gnav li a:link{
-  color: orange;
+  color: #07b53b;
 }
 
 .gnav li li{
@@ -83,7 +86,7 @@ header h1{
 }
 
 .gnav li li a{
-  border-bottom: 1px solid orange;
+  border-bottom: 1px solid #07b53b;
 }
 
 // 隙間-------------------------------------------------------
@@ -92,12 +95,32 @@ header h1{
 }
 
 // link_to-color---------------------------------------------
-.link-orange{
-  color: orange;
+.link-green{
+  color: #07b53b;
 }
 
-.link-orange:hover{
-  color: orange;
+.link-green:hover{
+  color: #07b53b;
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+.link-white{
+  color: white;
+}
+
+.link-white:hover{
+  color: white;
+  text-decoration: none;
+}
+
+.link-top{
+  font-size: 20px;
+  color:#07b53b;
+}
+
+.link-top:hover{
+  color: #07b53b;
   text-decoration: none;
   opacity: 0.5;
 }
@@ -109,9 +132,111 @@ header h1{
 .headline{
   text-align: center;
 }
+
+// text---------------------
+.text{
+  margin-top: 30px;
+  color: #07b53b;
+  text-align: center;
+}
 // table-----------------------------------
 table{
   margin: 20px auto;
+}
+// top-------------------------------
+.top-image{
+  background-image: url('book.jpg');
+  background-size:cover;
+  background-repeat:  no-repeat;
+  background-position:center bottom;
+  width: 100%;
+  height: 400px;
+}
+
+.home-top{
+  font-size: 60px;
+  line-height: 300px;
+  color: #07b53b;
+  margin: 0;
+}
+// container--------------------------
+.flex-container{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.flex-item{
+  width: 50%;
+  height: 200px;
+  text-align: center;
+}
+
+.flex-container-btn{
+  display: flex;
+  margin-top: 60px;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+
+.flex-item-btn{
+
+}
+
+// btn---------------------------------
+
+.btn-square {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #07b53b;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #03A431;
+  border-radius: 3px;
+}
+.btn-square:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+.btn-circle-flat {
+  display: inline-block;
+  text-decoration: none;
+  background: #07b53b;
+  color: #FFF;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  border-radius: 50%;
+  text-align: center;
+  overflow: hidden;
+  transition: .4s;
+}
+
+.btn-circle-flat:hover {
+  background: #07E847;
+}
+
+// footer-----------------------------------------
+footer{
+  width: 100%;
+  height: 50px;
+  background-color: #353535;
+  bottom: 0;
+  position: absolute;
+}
+
+.footer-container{
+  color: white;
+  text-align: center;
+  line-height: 50px;
+}
+
+
+.paragraph{
+  text-align: center;
 }
 
 .alert{
