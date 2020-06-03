@@ -2,3 +2,4 @@
   <h1>ユーザー編集</h1>
   <%=render 'givings/giving-form'%>
 </div>
+<div class="des"><%=link_to "ユーザー削除", giving_path(@giving),{method: :delete, class:"link-red", data:{confirm: '本当に削除しますか？'}}%></div>

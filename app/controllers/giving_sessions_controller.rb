@@ -7,6 +7,7 @@ class GivingSessionsController < ApplicationController
     giving = Giving.find_by(email: params[:giving_session][:email])
     if giving && giving.authenticate(params[:giving_session][:password])
       giving_login giving
+      flash[:notice] = "ログインしました"
       redirect_to giving
     else
       render 'new'
@@ -15,6 +16,7 @@ class GivingSessionsController < ApplicationController
 
   def destroy
     giving_logout
+    flash[:notice] = "ログアウトしました"
     redirect_to root_path
   end
 end

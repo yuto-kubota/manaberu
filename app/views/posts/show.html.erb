@@ -3,12 +3,29 @@
   <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @post.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 <div class="post-content">
-  説明
+  動画説明
   <div>
     <%=@post.content%>
   </div>
 </div>
+<% if @post.giving == current_user_giving %>
 <div class="flex-container">
   <div class="pr-3"><%=link_to "編集", edit_post_path(@post),class:"link-green"%></div>
-  <div class="pl-3"><%=link_to "削除", post_path(@post), {method: :delete, class:"link-red"} %></div>
+  <div class="pl-3"><%=link_to "削除", post_path(@post), {method: :delete, class:"link-red", data:{confirm: '本当に削除しますか？'}} %></div>
 </div>
+<% end %>
+<% if child_logged_in? %>
+<div class="icon-text">
+   <% if @post.finished?(current_user_child) %>
+     <%=link_to post_fins_path(@post), {method: :delete, class:"text-success text-decoration-none"} do %>
+       <i class="far fa-check-square icon"></i>
+       <p>OK!</p>
+     <% end %>
+   <% else %>
+     <%=link_to post_fins_path(@post), {method: :post, class:"text-danger text-decoration-none"} do %>
+       <i class="far fa-check-square icon"></i>
+       <p>動画をみたらチェック！</p>
+       <% end %>
+   <% end %>
+   </div>
+<% end %>

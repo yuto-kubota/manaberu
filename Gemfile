@@ -64,3 +64,4 @@ end
 gem 'bootstrap'
 gem 'image_processing'
 gem 'mini_magick'
+gem 'font-awesome-sass'

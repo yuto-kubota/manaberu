@@ -18,5 +18,7 @@ Rails.application.routes.draw do
   resources :parents
   resources :children
   resources :givings
-  resources :posts
+  resources :posts do
+    resource :fins, only: [:create, :destroy]
+  end
 end

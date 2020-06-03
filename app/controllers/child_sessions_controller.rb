@@ -7,6 +7,7 @@ class ChildSessionsController < ApplicationController
     child = Child.find_by(name: params[:child_session][:name])
     if child && child.authenticate(params[:child_session][:password])
       child_login child
+      flash[:notice] = "ログインしました"
       redirect_to child
     else
       render 'new'
@@ -15,6 +16,7 @@ class ChildSessionsController < ApplicationController
 
   def destroy
     child_logout
+    flash[:notice] = "ログアウトしました"
     redirect_to root_path
   end
 end

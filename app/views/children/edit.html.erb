@@ -2,3 +2,4 @@
   <h1>children編集</h1>
   <%=render 'children/child-form'%>
 </div>
+<div class="des"><%=link_to "ユーザー削除", child_path(@child),{method: :delete, class:"link-red", data:{confirm: '本当に削除しますか？'}}%></div>

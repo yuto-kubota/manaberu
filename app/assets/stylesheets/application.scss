@@ -14,6 +14,8 @@
  *= require_tree .
  */
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 body{
   color: #07b53b;
@@ -24,6 +26,10 @@ body{
 
 .b-body{
   min-height: 93vh;
+}
+
+.color{
+  color: #07b53b;
 }
 
 
@@ -158,6 +164,15 @@ header h1{
 // table-----------------------------------
 table{
   margin: 20px auto;
+  text-align: center;
+}
+
+.table{
+  width: 400px;
+}
+
+.table-top{
+  color: blue;
 }
 // top-------------------------------
 .top-image{
@@ -254,6 +269,21 @@ footer{
 .video{
   text-align: center;
   padding-top: 30px;
+}
+// icon------------------------------------------
+.icon{
+  font-size: 40px;
+}
+
+.icon-text{
+  text-align: center;
+  padding-top: 30px;
+}
+
+//
+.des{
+  text-align: center;
+  padding: 30px 0;
 }
 
 .post-content{

@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
    user = Parent.find_by(email: params[:session][:email])
    if user && user.authenticate(params[:session][:password])
      parent_login user
+     flash[:notice] = "ログインしました"
      redirect_to user
    else
      render 'new'
@@ -15,6 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     parent_logout
+    flash[:notice] = "ログアウトしました"
     redirect_to root_path
   end
 end

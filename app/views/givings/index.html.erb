@@ -1,4 +1,12 @@
-<h1>Givings#index</h1>
-<% @givings.each do |g| %>
-<p><%=g.name%></p>
-<% end %>
+<h1 class="headline pt-4">先生一覧</h1>
+<table class="table">
+  <tbody>
+    <%@givings.each do |giving| %>
+    <tr>
+      <td>
+        <%=link_to giving.name, giving_path(giving), class:"link-green"%>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

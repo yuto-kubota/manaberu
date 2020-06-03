@@ -2,15 +2,15 @@
 <table class="table table-hover">
   <thead class="thead-default">
     <tr>
-      <th>child名前</th>
-      <th>child年齢</th>
+      <th class="color">生徒名</th>
+      <th class="color">年齢</th>
     </tr>
   </thead>
   <tbody>
     <% @parent.children.each do |child| %>
     <tr>
-      <td><%=link_to child.name, child_path(child), class:"link-orange"%></td>
-      <td><%= child.age %></td>
+      <td><%=link_to child.name, child_path(child), class:"link-green"%></td>
+      <td class="color"><%= child.age %></td>
     </tr>
     <% end %>
   </tbody>
