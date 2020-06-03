@@ -8,7 +8,16 @@
     <%=@post.content%>
   </div>
 </div>
+<% if @post.giving %>
 <div class="flex-container">
   <div class="pr-3"><%=link_to "編集", edit_post_path(@post),class:"link-green"%></div>
   <div class="pl-3"><%=link_to "削除", post_path(@post), {method: :delete, class:"link-red"} %></div>
 </div>
+<% end %>
+<% if child_logged_in? %>
+   <% if @post.finished?(current_user_child) %>
+       <p><span>終了済み: </span><%=link_to "a", post_fins_path(@post), method: :delete %></p>
+   <% else %>
+       <p><span>未終了: </span><%=link_to "a", post_fins_path(@post), method: :post %></p>
+   <% end %>
+<% end %>
