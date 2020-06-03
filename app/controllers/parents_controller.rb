@@ -14,7 +14,7 @@ class ParentsController < ApplicationController
   def create
     @parent = Parent.new(parent_params)
     if @parent.save
-      login @parent
+      parent_login @parent
       flash[:notice] = "ユーザー登録完了"
       redirect_to parent_path(@parent)
     else
@@ -28,8 +28,7 @@ class ParentsController < ApplicationController
 
   def update
     @parent = Parent.find(params[:id])
-    @parent.update(parent_params)
-    if @parent.save
+    if @parent.update(parent_params)
       flash[:notice] = "ユーザー編集完了"
       redirect_to parent_path(@parent)
     else
@@ -40,8 +39,9 @@ class ParentsController < ApplicationController
   def destroy
     @parent = Parent.find(params[:id])
     @parent.destroy
+    parent_logout
     flash[:notice] = "ユーザー削除完了"
-    redirect_to parents_path
+    redirect_to root_path
   end
 
   private
