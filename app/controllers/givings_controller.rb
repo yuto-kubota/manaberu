@@ -6,7 +6,7 @@ class GivingsController < ApplicationController
 
   def create
     @giving = Giving.new(giving_params)
-    if @giving.save
+    if @giving.avatar.attach(params[:giving][:avatar]) && @giving.save
       giving_login @giving
       flash[:notice] = "ユーザー登録完了"
       redirect_to giving_path(@giving)
@@ -48,6 +48,6 @@ class GivingsController < ApplicationController
 
   private
    def giving_params
-     params.require(:giving).permit(:name, :email, :password, :password_confirmation)
+     params.require(:giving).permit(:name, :email, :password, :password_confirmation, :avatar)
    end
 end

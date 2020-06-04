@@ -1,5 +1,7 @@
 class Child < ApplicationRecord
   validates :name, presence: true
+  validates :age, presence: true
+  validates :nickname, presence: true
   validates :parent_id, presence: true
   has_secure_password
   has_one_attached :avatar

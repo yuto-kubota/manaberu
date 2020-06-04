@@ -4,7 +4,7 @@
     <%@givings.each do |giving| %>
     <tr>
       <td>
-        <%=link_to giving.name, giving_path(giving), class:"link-green"%>
+        <%=image_tag giving.giving_avatar , {class: "rounded-circle mr-2"} if giving.avatar.attached? %><%=link_to giving.name, giving_path(giving), class:"link-green"%>
       </td>
     </tr>
     <% end %>
