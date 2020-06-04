@@ -65,3 +65,4 @@ gem 'bootstrap'
 gem 'image_processing'
 gem 'mini_magick'
 gem 'font-awesome-sass'
+gem 'aws-sdk-s3', '1.46.0', require: false

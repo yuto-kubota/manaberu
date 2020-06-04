@@ -1,30 +1,30 @@
 <%=form_with model: @child, local: true do |f| %>
  <div class="form-group">
-   <%=f.label :name%>
+   <%=f.label :name, "名前"%>
    <%=f.text_field :name, class: "form-control"%>
  </div>
  <div class="form-group">
-   <%=f.label :password%>
+   <%=f.label :password, "パスワード"%>
    <%=f.password_field :password, class: "form-control"%>
  </div>
  <div class="form-group">
-   <%=f.label :password_confirmation%>
+   <%=f.label :password_confirmation, "パスワード確認"%>
    <%=f.password_field :password_confirmation, class: "form-control"%>
  </div>
  <div class="form-group">
-   <%=f.label :nickname%>
+   <%=f.label :nickname,"ニックネーム"%>
    <%=f.text_field :nickname, class: "form-control"%>
  </div>
  <div class="form-group">
-   <%=f.label :age %>
+   <%=f.label :age, "年齢" %>
    <%=f.number_field :age, class: "form-control"%>
  </div>
  <div class="form-group">
-   <%=f.label :avatar%>
+   <%=f.label :avatar,"アイコン"%>
    <%=f.file_field :avatar, class: "form-control"%>
  </div>
  <div class="form-group">
-  <%=f.label :parent_id %>
+  <%=f.label :parent_id,"学校コード" %>
   <%=f.number_field :parent_id, class: "form-control"%>
  </div>
  <%=f.submit "送信",  class:"btn btn-light"%>

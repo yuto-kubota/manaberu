@@ -4,7 +4,7 @@
   <ul class="gnav">
     <li><%=link_to current_user_parent.name, parent_path(current_user_parent), class: "link-green" %></li>
     <li>
-      <a href="#" ontouchsrart=""><span>tap&slide</span></a>
+      <a href="#" ontouchsrart=""><span>メニュー</span></a>
       <ul>
         <li><%=link_to "ユーザー編集", edit_parent_path(current_user_parent), class: "link-green" %></li>
         <li><%=link_to "ログアウト", logout_path, {method: :delete , class: "link-green"} %></li>
@@ -15,7 +15,7 @@
   <ul class="gnav">
     <li><%=link_to current_user_child.nickname, child_path(current_user_child), class: "link-green" %></li>
     <li>
-      <a href="#" ontouchsrart=""><span>tap&slide</span></a>
+      <a href="#" ontouchsrart=""><span>メニュー</span></a>
       <ul>
         <li><%=link_to "授業一覧", posts_path %></li>
         <li><%=link_to "先生一覧", givings_path %></li>
@@ -28,7 +28,7 @@
   <ul class="gnav">
     <li><%=link_to current_user_giving.name, giving_path(current_user_giving), class: "link-green" %></li>
     <li>
-      <a href="#" ontouchsrart=""><span>tap&slide</span></a>
+      <a href="#" ontouchsrart=""><span>メニュー</span></a>
       <ul>
         <li><%=link_to "授業を作る", new_post_path, class: "link-green" %></li>
         <li><%=link_to "ユーザー編集", edit_giving_path(current_user_giving), class: "link-green" %></li>
@@ -39,7 +39,7 @@
   <% else %>
   <ul class="gnav">
     <li>
-      <a href="#" ontouchsrart="">tap&slide</a>
+      <a href="#" ontouchsrart="">メニュー</a>
       <ul>
         <li><%=link_to "先生はこちら", homes_giving_top_path %></li>
       </ul>
