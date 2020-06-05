@@ -1,24 +1,7 @@
-# README
+#manaberu
+様々なことを学ぶためのアプリです。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+##アプリ概要
+ユーザーは３種あり、givingが授業を提供。childが授業を受けるユーザー。parentがchildを管理、把握。
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+##ER図
